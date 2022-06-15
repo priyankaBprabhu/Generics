@@ -1,16 +1,15 @@
 package com.bridgelabs.generics;
 
 public class MaximumNumber {
-    Float num1;
-    Float num2;
-    Float num3;
-    public MaximumNumber(Float num1, Float num2, Float num3) {
+    String num1,num2,num3;
+
+    public MaximumNumber(String num1, String num2, String num3) {
         this.num1 = num1;
         this.num2 = num2;
         this.num3 = num3;
     }
 
-    public Float findMaximumNum() {
+    public String findMaximumNum() {
         if((num1.compareTo(num2)) >0 && (num1.compareTo(num3)) > 0) {
             return num1;
         }
