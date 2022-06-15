@@ -11,5 +11,11 @@ public class MaxTestGenerics {
         int result = maximumNum.findMaximumNum();
         Assert.assertEquals(99, result);
     }
+    @Test
+    public void givenMaxNumInSecondPos_WhenMax_ShouldReturnNum() {
+        MaximumNumber maximumNum = new MaximumNumber(88, 99, 77);
+        int result = maximumNum.findMaximumNum();
+        Assert.assertEquals(99, result);
+    }
 
 }
