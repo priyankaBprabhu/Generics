@@ -2,22 +2,17 @@ package com.bridgelabs.generics;
 
 public class MaximumNumber<T extends Comparable<T>> {
 
-    T num1, num2, num3;
-
-    public MaximumNumber(T num1, T num2, T num3) {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.num3 = num3;
-    }
-
-    public  T findMaximumNum() {
-        if ((num1.compareTo(num2)) > 0 && (num1.compareTo(num3)) > 0) {
-            return num1;
-        } else if (num2.compareTo(num3) > 0) {
-            return  num2;
+    public <T extends Comparable<T>>T findMaximumNum (T ...num){
+        T temp;
+        for (int i = 0; i < num.length; i++) {
+            for(int j = i + 1; j < num.length; j++) {
+                if (num[i].compareTo(num[j]) < 0) {
+                    temp = num[i];
+                    num[i] = num[j];
+                    num[j] = temp;
+                }
+            }
         }
-        return  num3;
-
+        return num[0];
     }
-
 }
